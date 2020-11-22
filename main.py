@@ -84,6 +84,9 @@ def send(id,message):
         bot.sendMessage(id, message, parse_mode=None, disable_web_page_preview=None, disable_notification=None, reply_to_message_id=None, reply_markup=None)
 
 if __name__ == "__main__":
+    print(cookie)
+    print(teleid)
+    print(teletoken)
     if cookie=='':
         print('[网易云游戏自动签到]未设置Cookie！正在退出……')
         sys.exit()
