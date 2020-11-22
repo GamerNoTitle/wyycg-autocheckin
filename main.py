@@ -19,7 +19,8 @@ elif len(sys.argv)==4:
     cookie=sys.argv[1]
     teleid=sys.argv[2]
     teletoken=sys.argv[3]
-    tele_enable=True
+    if teleid!="" and teletoken!="":
+        tele_enable=True
 
 if tele_enable:
     bot=telepot.Bot(teletoken)
