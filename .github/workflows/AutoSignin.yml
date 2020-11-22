@@ -29,12 +29,11 @@ jobs:
         pip install -r requirements.txt
     - name: set var
       run: |
-        echo ${{ secrets.cookie }} > cookie.txt
         echo ${{ secrets.teleid }} > teleid.txt
         echo ${{ secrets.teletoken }} > teletoken.txt
     - name: Run script
       run: |
-        python3 main.py
+        python3 main.py ${{ secrets.cookie }}
     - name: remove var
       run: |
         rm cookie.txt

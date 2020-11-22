@@ -9,16 +9,18 @@ current='https://n.cg.163.com/api/v2/client-settings/@current'
 cookie=''
 teleid=0
 teletoken=''
-try:
-    with open('cookie.txt','r') as f:
-        cookie=f.read()
-        f.close
-except FileNotFoundError as e:
-    print('[网易云游戏自动签到]无法读取Cookie，请检查是否正确设置Cookie！错误回显为：\n{}'.format(e))
-    sys.exit()
-except Exception as e:
-    print('[网易云游戏自动签到]无法读取Cookie，回显为\n{}'.format(e))
-    sys.exit()
+# try:
+#     with open('cookie.txt','r') as f:
+#         cookie=f.read()
+#         f.close
+# except FileNotFoundError as e:
+#     print('[网易云游戏自动签到]无法读取Cookie，请检查是否正确设置Cookie！错误回显为：\n{}'.format(e))
+#     sys.exit()
+# except Exception as e:
+#     print('[网易云游戏自动签到]无法读取Cookie，回显为\n{}'.format(e))
+#     sys.exit()
+
+cookie=sys.argv[1]
 
 try:
     with open('teleid.txt','r') as f:
