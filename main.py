@@ -7,6 +7,8 @@ tele_enable=False
 sign='https://n.cg.163.com/api/v2/sign-today'
 current='https://n.cg.163.com/api/v2/client-settings/@current'
 cookie=''
+teleid=0
+teletoken=''
 try:
     with open('cookie.txt','r') as f:
         cookie=f.read()
@@ -40,7 +42,7 @@ getheader={
     'Accept': 'application/json, text/plain, */*',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36',
     'X-Platform': '0',
-    'Authorization': cookie,
+    'Authorization': str(cookie),
     'Origin': 'https://cg.163.com',
     'Sec-Fetch-Site': 'same-site',
     'Sec-Fetch-Mode': 'cors',
@@ -54,7 +56,7 @@ signheader={
     'Accept': 'application/json, text/plain, */*',
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,ja-JP;q=0.6,ja;q=0.5',
-    'Authorization': cookie,
+    'Authorization': str(cookie),
     'Connection': 'keep-alive',
     'Content-Length': '0',
     'Host': 'n.cg.163.com',
@@ -73,7 +75,6 @@ def signin(url,header):
 
 def getme(url,header):
     result=r.get(url=url,headers=header)
-    print(result)
     return result
 
 def send(id,message):
@@ -97,3 +98,5 @@ if __name__ == "__main__":
         print(message)
     else:
         message='[网易云游戏自动签到]签到失败，回显状态码为{}\n具体错误信息如下：\n{}'.format(sign.status_code,sign.text)
+        send(teleid,message)
+        print(message)
