@@ -27,13 +27,9 @@ jobs:
     - name: Install requirements #安装轮子
       run: |
         pip install -r requirements.txt
-    - name: set var
-      run: |
-        echo ${{ secrets.teleid }} > teleid.txt
-        echo ${{ secrets.teletoken }} > teletoken.txt
     - name: Run script
       run: |
-        python3 main.py ${{ secrets.cookie }}
+        python3 main.py "${{ secrets.cookie }}" "${{ secrets.teleid }}" "${{ secrets.teletoken }}"
     - name: remove var
       run: |
         rm cookie.txt

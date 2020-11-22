@@ -19,20 +19,17 @@ teletoken=''
 # except Exception as e:
 #     print('[网易云游戏自动签到]无法读取Cookie，回显为\n{}'.format(e))
 #     sys.exit()
-
-cookie=sys.argv[1]
-
-try:
-    with open('teleid.txt','r') as f:
-        teleid=f.read()
-        f.close()
-
-    with open('teletoken.txt','r') as f:
-        teletoken=f.read()
-        f.close
+if len(sys.argv)==1:
+    print('[网易云游戏自动签到]未设置cookie，正在退出……')
+elif len(sys.argv)==2:
+    cookie=sys.argv[1]
+    teleid=0
+    teletoken=''
+elif len(sys.argv)==4:
+    cookie=sys.argv[1]
+    teleid=sys.argv[2]
+    teletoken=sys.argv[3]
     tele_enable=True
-except:
-    tele_enable=False
 
 if tele_enable:
     bot=telepot.Bot(teletoken)
