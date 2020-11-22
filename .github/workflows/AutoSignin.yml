@@ -30,8 +30,3 @@ jobs:
     - name: Run script
       run: |
         python3 main.py "${{ secrets.cookie }}" "${{ secrets.teleid }}" "${{ secrets.teletoken }}"
-    - name: remove var
-      run: |
-        rm cookie.txt
-        rm teleid.txt
-        rm teletoken.txt

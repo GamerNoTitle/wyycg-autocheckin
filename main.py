@@ -9,16 +9,6 @@ current='https://n.cg.163.com/api/v2/client-settings/@current'
 cookie=''
 teleid=0
 teletoken=''
-# try:
-#     with open('cookie.txt','r') as f:
-#         cookie=f.read()
-#         f.close
-# except FileNotFoundError as e:
-#     print('[网易云游戏自动签到]无法读取Cookie，请检查是否正确设置Cookie！错误回显为：\n{}'.format(e))
-#     sys.exit()
-# except Exception as e:
-#     print('[网易云游戏自动签到]无法读取Cookie，回显为\n{}'.format(e))
-#     sys.exit()
 if len(sys.argv)==1:
     print('[网易云游戏自动签到]未设置cookie，正在退出……')
 elif len(sys.argv)==2:
@@ -81,12 +71,6 @@ def send(id,message):
         bot.sendMessage(id, message, parse_mode=None, disable_web_page_preview=None, disable_notification=None, reply_to_message_id=None, reply_markup=None)
 
 if __name__ == "__main__":
-    print(cookie)
-    print(teleid)
-    print(teletoken)
-    if cookie=='':
-        print('[网易云游戏自动签到]未设置Cookie！正在退出……')
-        sys.exit()
     me=getme(current,getheader)
     if(me.status_code!=200):
         message='[网易云游戏自动签到]签到失败！请检查Cookie是否过期！或者附上报错信息到 https://github.com/GamerNoTitle/wyycg-autosignin/issues 发起issue'
