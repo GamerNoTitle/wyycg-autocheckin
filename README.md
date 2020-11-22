@@ -1,4 +1,4 @@
-# wyycg-autosignin
+# 网易云游戏自动签到
 
 本脚本通过使用Github Action来进行[网易云游戏](https://cg.163.com/)签到操作，让你能够天天白嫖网易云游戏时长和云电脑！
 
