@@ -61,3 +61,6 @@
 找@BotFather进行机器人的创建，按照提示创建即可，会给你一个API TOKEN，如果一不小心点过去了可以用命令`/mybots`管理自己的bot，找到自己想要使用的bot并获取API就可以了
 
 ![](https://upimage.alexhchu.com/2020/11/22/0428751a3925e.png)
+
+## 赞助
+![WeChat](https://cdn.jsdelivr.net/gh/GamerNoTitle/Picture-repo-v1@master/img/Payments/WeChat.png) ![AliPay](https://cdn.jsdelivr.net/gh/GamerNoTitle/Picture-repo-v1@master/img/Payments/AliPay.jpg)
