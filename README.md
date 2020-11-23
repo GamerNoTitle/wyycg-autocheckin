@@ -63,4 +63,5 @@
 ![](https://upimage.alexhchu.com/2020/11/22/0428751a3925e.png)
 
 ## 赞助
-![WeChat](https://cdn.jsdelivr.net/gh/GamerNoTitle/Picture-repo-v1@master/img/Payments/WeChat.png) ![AliPay](https://cdn.jsdelivr.net/gh/GamerNoTitle/Picture-repo-v1@master/img/Payments/AliPay.jpg)
+![WeChat](https://cdn.jsdelivr.net/gh/GamerNoTitle/Picture-repo@master/img/Donate/WeChatPay.png) 
+![AliPay](https://cdn.jsdelivr.net/gh/GamerNoTitle/Picture-repo@master/img/Donate/AliPay.jpg)
