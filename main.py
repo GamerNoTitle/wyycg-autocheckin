@@ -67,7 +67,7 @@ def send(id,message):
         bot.sendMessage(id, message, parse_mode=None, disable_web_page_preview=None, disable_notification=None, reply_to_message_id=None, reply_markup=None)
 
 def scsend(SCKEY,message):
-    sc_url='http://sc.ftqq.com/{SCKEY}.send?text=网易云游戏自动签到脚本&desp={message}'
+    sc_url='http://sc.ftqq.com/{}.send?text=网易云游戏自动签到脚本&desp={}'.format(SCKEY,message)
     if sc_enable:
         r.get(url=sc_url)
 
