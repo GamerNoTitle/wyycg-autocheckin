@@ -89,8 +89,16 @@
 
 请检查自己的Telebot Token是否正确！
 
-### urllib3.exceptions.MaxRetryError
+### urllib3.exceptions
+
+#### MaxRetryError
 
 `HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1166372402:AAFihK9Bq8_dPuBMDni8y90cZJvprqMFmAs/sendMessage`
 
 出现这个错误，那就是Telegram的问题，Github连接不上Telegram服务器（大半是TG服务器炸了）
+
+#### ReadTimeoutError
+
+`HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=30)`
+
+出现这个错误，那就是Telegram的问题，Github连接不上Telegram服务器（大半是TG服务器炸了）~~（复制粘贴大法）~~
