@@ -71,6 +71,10 @@ def scsend(SCKEY,message):
     if sc_enable:
         r.get(url=sc_url)
 
+class ScriptError(Exception):
+    print("[网易云游戏自动签到]脚本发生错误，请查看运行记录！")
+
+
 if __name__ == "__main__":
     me=getme(current,getheader)
     if(me.status_code!=200):
@@ -78,7 +82,7 @@ if __name__ == "__main__":
         send(teleid,message)
         scsend(sckey,message)
         print(message)
-        sys.exit()
+        raise ScriptError
     sign=signin(sign,signheader)
     if(sign.status_code==200):
         message='[网易云游戏自动签到]签到成功！'
@@ -90,4 +94,4 @@ if __name__ == "__main__":
         send(teleid,message)
         scsend(sckey,message)
         print(message)
-        sys.exit()
+        raise(ScriptError)
