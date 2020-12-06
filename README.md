@@ -99,7 +99,7 @@
 
 #### MaxRetryError
 
-`HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1166372402:AAFihK9Bq8_dPuBMDni8y90cZJvprqMFmAs/sendMessage`
+`HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /botxxxx/sendMessage`
 
 出现这个错误，那就是Telegram的问题，Github连接不上Telegram服务器（大半是TG服务器炸了）
 
