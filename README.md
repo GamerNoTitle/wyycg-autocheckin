@@ -1,6 +1,6 @@
 # 网易云游戏自动签到
 
-本脚本通过使用Github Action来进行[网易云游戏](https://cg.163.com/)签到操作，让你能够天天白嫖网易云游戏时长和云电脑！
+本脚本通过使用Github Action来进行[网易云游戏](https://cloudgame.webapp.163.com/newer.html?invite_code=2ZLPWY)签到操作，让你能够天天白嫖网易云游戏时长和云电脑！
 
 喜欢就给我点个STAR吧！
 
