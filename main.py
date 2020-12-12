@@ -9,8 +9,8 @@ sign='https://n.cg.163.com/api/v2/sign-today'
 current='https://n.cg.163.com/api/v2/client-settings/@current'
 
 cookies=sys.argv[1].split('#')
-teleid="" #sys.argv[2]
-teletoken="" #sys.argv[3]
+teleid=sys.argv[2]
+teletoken=sys.argv[3]
 sckey=sys.argv[4]
 if cookies=="":
     print('[网易云游戏自动签到]未设置cookie，正在退出……')
@@ -99,7 +99,7 @@ if __name__ == "__main__":
         try:
             sign=signin(sign,cookie)
         except:
-            message='第{}个账号签到失败，回显状态码为{}\n具体错误信息如下：\n{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
+            message='第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
             failure.append(cookie)
             msg.append(message)
             signerror=True
@@ -109,7 +109,7 @@ if __name__ == "__main__":
             success.append(cookie)
             msg.append(message)
         elif(signerror!=True):
-            message='第{}个账号签到失败，回显状态码为{}\n具体错误信息如下：\n{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
+            message='第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
             failure.append(cookie)
             msg.append(message)
     outputmsg=str(msg).replace("[",'').replace(']','').replace(',','<br>').replace('\'','')
