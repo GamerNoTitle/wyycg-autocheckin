@@ -61,6 +61,8 @@
 
 我们在里面找到`@me`这一项，然后在右边找到`Authorization`将冒号后面的内容复制下来就是我们所需要的Cookie
 
+**如果使用多用户，多个cookie请使用`#`分隔**
+
 ![](https://upimage.alexhchu.com/2020/11/22/bfb0e2dbd347a.png)
 
 ### teleid获取
