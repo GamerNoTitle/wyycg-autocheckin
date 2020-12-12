@@ -81,30 +81,34 @@ if __name__ == "__main__":
     for i in cookies:
         print(i)
         cookie=i
+        autherror=False
+        signerror=False
         try:
             me=getme(current,cookie)
         except:
             message='第{}个账号验证失败！请检查Cookie是否过期！或者附上报错信息到 https://github.com/GamerNoTitle/wyycg-autosignin/issues 发起issue'.format(cookies.index(i)+1)
             failure.append(cookie)
             msg.append(message)
+            autherror=True
 
-        if(me.status_code!=200):
+        if(me.status_code!=200 and autherror!=True):
             message='第{}个账号验证失败！请检查Cookie是否过期！或者附上报错信息到 https://github.com/GamerNoTitle/wyycg-autosignin/issues 发起issue'.format(cookies.index(i)+1)
             failure.append(cookie)
             msg.append(message)
-            
+
         try:
             sign=signin(sign,cookie)
         except:
             message='第{}个账号签到失败，回显状态码为{}\n具体错误信息如下：\n{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
             failure.append(cookie)
             msg.append(message)
+            signerror=True
 
         if(sign.status_code==200):
             message='第{}个账号签到成功！'.format(cookies.index(i)+1)
             success.append(cookie)
             msg.append(message)
-        else:
+        elif(signerror!=True):
             message='第{}个账号签到失败，回显状态码为{}\n具体错误信息如下：\n{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
             failure.append(cookie)
             msg.append(message)
