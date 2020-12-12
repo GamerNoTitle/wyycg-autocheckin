@@ -29,6 +29,8 @@
 
 2、进入设置，设置变量`cookie`和`teleid` `teletoken` `SCKEY`（这三个可选）
 
+**如果使用多用户，多个cookie请使用`#`分隔**
+
 [如何获取变量内容？请点这里](#变量内容获取)
 
 ![](https://upimage.alexhchu.com/2020/11/22/988724b77ca62.png)
