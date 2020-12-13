@@ -107,6 +107,7 @@ if __name__ == "__main__":
         if(sign.status_code==200):
             message='第{}个账号签到成功！'.format(cookies.index(i)+1)
             success.append(cookie)
+            msg.append(message)
         elif(signerror!=True):
             message='第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
             failure.append(cookie)
@@ -132,5 +133,5 @@ if __name__ == "__main__":
     scsend(sckey,scinfomsg)
     send(teleid,teleinfomsg)
     print(scinfomsg)
-    if(len(msg)!=0):
+    if(len(failure)!=0):
         raise Error
