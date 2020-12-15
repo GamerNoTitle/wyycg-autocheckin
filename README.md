@@ -8,6 +8,8 @@
 
 **请不要使用非master分支脚本，他们通常正在开发新功能，会有BUG出现**
 
+关于签到失败返回的结果（[这里有实例](https://github.com/GamerNoTitle/wyycg-autocheckin/discussions/6)），如果你有解码的经验，可以前往[这里](https://github.com/GamerNoTitle/wyycg-autocheckin/discussions/6)提供帮助，Thanks♪(･ω･)ﾉ
+
 ## 赞助
 点击下面的Badge其中一个就可以跳转到相应页面，感谢老板的支持！
 
