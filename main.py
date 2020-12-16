@@ -99,6 +99,7 @@ if __name__ == "__main__":
         try:
             sign=signin(sign,cookie)
         except:
+            print("No.{}: sign except block 1".format(cookies.index(cookie)+1))
             message='第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
             failure.append(cookie)
             msg.append(message)
@@ -109,6 +110,7 @@ if __name__ == "__main__":
             success.append(cookie)
             msg.append(message)
         elif(signerror!=True):
+            print('No.{}: Signerror False but failed'.format(cookies.index(cookie)+1))
             message='第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
             failure.append(cookie)
             msg.append(message)
