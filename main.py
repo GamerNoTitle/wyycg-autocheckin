@@ -106,6 +106,7 @@ if __name__ == "__main__":
             signerror=True
 
         if(sign.status_code==200):
+            print("No.{}: Success signed".format(cookies.index(cookie)+1))
             message='第{}个账号签到成功！'.format(cookies.index(i)+1)
             success.append(cookie)
             msg.append(message)
