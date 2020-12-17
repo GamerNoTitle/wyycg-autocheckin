@@ -3,29 +3,33 @@ import requests as r
 import json
 import telepot
 
-tele_enable=False
-sc_enable=False
-sign='https://n.cg.163.com/api/v2/sign-today'
-current='https://n.cg.163.com/api/v2/client-settings/@current'
+tele_enable = False
+sc_enable = False
+sign_url = 'https://n.cg.163.com/api/v2/sign-today'
+current = 'https://n.cg.163.com/api/v2/client-settings/@current'
 
-cookies=sys.argv[1].split('#')
-teleid=sys.argv[2]
-teletoken=sys.argv[3]
-sckey=sys.argv[4]
-if cookies=="":
+
+cookies = sys.argv[1].split('#')
+teleid = sys.argv[2]
+teletoken = sys.argv[3]
+sckey = sys.argv[4]
+
+if cookies == "":
     print('[网易云游戏自动签到]未设置cookie，正在退出……')
     sys.exit()
-if teleid!="" and teletoken!="":
-    tele_enable=True
-    bot=telepot.Bot(teletoken)
-if sckey!="":
-    sc_enable=True
+if teleid != "" and teletoken != "":
+    tele_enable = True
+    bot = telepot.Bot(teletoken)
+if sckey != "":
+    sc_enable = True
+
 
 class Error(Exception):
     pass
 
-def signin(url,cookie):
-    header={
+
+def signin(url, cookie):
+    header = {
         'Accept': 'application/json, text/plain, */*',
         'Accept-Encoding': 'gzip, deflate, br',
         'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,ja-JP;q=0.6,ja;q=0.5',
@@ -42,11 +46,12 @@ def signin(url,cookie):
         'X-Platform': '0'
     }
 
-    result=r.post(url=url,headers=header)
+    result = r.post(url=url, headers=header)
     return result
 
-def getme(url,cookie):
-    header={
+
+def getme(url, cookie):
+    header = {
         'Host': 'n.cg.163.com',
         'Connection': 'keep-alive',
         'Accept': 'application/json, text/plain, */*',
@@ -59,82 +64,87 @@ def getme(url,cookie):
         'Sec-Fetch-Dest': 'empty',
         'Referer': 'https://cg.163.com/',
         'Accept-Encoding': 'gzip, deflate, br',
-        'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,ja-JP;q=0.6,ja;q=0.5'  
+        'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,ja-JP;q=0.6,ja;q=0.5'
     }
-    result=r.get(url=url,headers=header)
+    result = r.get(url=url, headers=header)
     return result
 
-def send(id,message):
-    if tele_enable:
-        bot.sendMessage(id, message, parse_mode=None, disable_web_page_preview=None, disable_notification=None, reply_to_message_id=None, reply_markup=None)
 
-def scsend(SCKEY,message):
-    sc_url='http://sc.ftqq.com/{}.send?text=网易云游戏自动签到脚本&desp={}'.format(SCKEY,message)
+def send(id, message):
+    if tele_enable:
+        bot.sendMessage(id, message, parse_mode=None, disable_web_page_preview=None, disable_notification=None,
+                        reply_to_message_id=None, reply_markup=None)
+
+
+def scsend(SCKEY, message):
+    sc_url = 'http://sc.ftqq.com/{}.send?text=网易云游戏自动签到脚本&desp={}'.format(SCKEY, message)
     if sc_enable:
         r.get(url=sc_url)
 
+
 if __name__ == "__main__":
-    success=[]
-    failure=[]
-    msg=[]
+    success = []
+    failure = []
+    msg = []
     print(len(cookies))
     for i in cookies:
         print(i)
-        cookie=i
-        autherror=False
-        signerror=False
+        cookie = i
+        autherror = False
+        signerror = False
+        sign_return = NULL
+        me = NULL
         try:
-            me=getme(current,cookie)
+            me = getme(current, cookie)
         except:
-            message='第{}个账号验证失败！请检查Cookie是否过期！或者附上报错信息到 https://github.com/GamerNoTitle/wyycg-autosignin/issues 发起issue'.format(cookies.index(i)+1)
+            message = '第{}个账号验证失败！请检查Cookie是否过期！或者附上报错信息到 https://github.com/GamerNoTitle/wyycg-autosignin/issues 发起issue'.format(
+                cookies.index(i) + 1)
             failure.append(cookie)
             msg.append(message)
-            autherror=True
+            autherror = True
 
-        if(me.status_code!=200 and autherror!=True):
-            message='第{}个账号验证失败！请检查Cookie是否过期！或者附上报错信息到 https://github.com/GamerNoTitle/wyycg-autosignin/issues 发起issue'.format(cookies.index(i)+1)
+        if me.status_code != 200 and not autherror:
+            message = '第{}个账号验证失败！请检查Cookie是否过期！或者附上报错信息到 https://github.com/GamerNoTitle/wyycg-autosignin/issues 发起issue'.format(
+                cookies.index(i) + 1)
             failure.append(cookie)
             msg.append(message)
 
         try:
-            sign=signin(sign,cookie)
+            sign_return = signin(sign_url, cookie)
         except:
-            print("No.{}: sign except block 1".format(cookies.index(cookie)+1))
-            message='第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
+            message = '第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i) + 1, sign_return.status_code, sign_return.text)
             failure.append(cookie)
             msg.append(message)
-            signerror=True
+            signerror = True
 
-        if(sign.status_code==200):
-            print("No.{}: Success signed".format(cookies.index(cookie)+1))
-            message='第{}个账号签到成功！'.format(cookies.index(i)+1)
+        if sign.status_code == 200:
+            message = '第{}个账号签到成功！'.format(cookies.index(i) + 1)
             success.append(cookie)
             msg.append(message)
-        elif(signerror!=True and sign.status_code!=200):
-            print('No.{}: Signerror False but failed'.format(cookies.index(cookie)+1))
-            message='第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i)+1,sign.status_code,sign.text)
+        elif not signerror:
+            message = '第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i) + 1, sign_return.status_code, sign_return.text)
             failure.append(cookie)
             msg.append(message)
-    outputmsg=str(msg).replace("[",'').replace(']','').replace(',','<br>').replace('\'','')
-    teleinfomsg='''
+    outputmsg = str(msg).replace("[", '').replace(']', '').replace(',', '<br>').replace('\'', '')
+    teleinfomsg = '''
     感谢使用来自GamerNoTitle的网易云游戏自动签到脚本！
     今日签到结果如下：
     成功数量：{0}/{2}
     失败数量：{1}/{2}
     具体情况如下：
     {3}
-    '''.format(len(success),len(failure),len(cookies),outputmsg)
-    scinfomsg='''
+    '''.format(len(success), len(failure), len(cookies), outputmsg)
+    scinfomsg = '''
     感谢使用来自<a herf='https://bili33.top'>GamerNoTitle</a>的<a herf='https://github.com/GamerNoTitle/wyycg-autocheckin'>网易云游戏自动签到脚本</a>！<br>
     今日签到结果如下：<br>
     成功数量：{0}/{2}<br>
     失败数量：{1}/{2}<br>
     具体情况如下：<br>
     {3}
-    '''.format(len(success),len(failure),len(cookies),outputmsg)
+    '''.format(len(success), len(failure), len(cookies), outputmsg)
 
-    scsend(sckey,scinfomsg)
-    send(teleid,teleinfomsg)
+    scsend(sckey, scinfomsg)
+    send(teleid, teleinfomsg)
     print(scinfomsg)
-    if(len(failure)!=0):
+    if (len(failure) != 0):
         raise Error
