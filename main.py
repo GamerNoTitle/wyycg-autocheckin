@@ -133,6 +133,8 @@ if __name__ == "__main__":
     失败数量：{1}/{2}
     具体情况如下：
     {3}
+    GamerNoTitle: https://bili33.top
+    网易云游戏自动签到脚本: https://github.com/GamerNoTitle/wyycg-autocheckin
     '''.format(len(success), len(failure), len(cookies), outputmsg)
     scinfomsg = '''
     感谢使用来自<a herf='https://bili33.top'>GamerNoTitle</a>的<a herf='https://github.com/GamerNoTitle/wyycg-autocheckin'>网易云游戏自动签到脚本</a>！<br>
@@ -141,6 +143,8 @@ if __name__ == "__main__":
     失败数量：{1}/{2}<br>
     具体情况如下：<br>
     {3}
+    GamerNoTitle: https://bili33.top
+    网易云游戏自动签到脚本: https://github.com/GamerNoTitle/wyycg-autocheckin
     '''.format(len(success), len(failure), len(cookies), outputmsg)
 
     scsend(sckey, scinfomsg)
