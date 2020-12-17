@@ -86,9 +86,7 @@ if __name__ == "__main__":
     success = []
     failure = []
     msg = []
-    print(len(cookies))
     for i in cookies:
-        print(i)
         cookie = i
         autherror = False
         signerror = False
@@ -149,6 +147,6 @@ if __name__ == "__main__":
 
     scsend(sckey, scinfomsg)
     send(teleid, teleinfomsg)
-    print(scinfomsg)
+    print(teleinfomsg)
     if (len(failure) != 0):
         raise Error
