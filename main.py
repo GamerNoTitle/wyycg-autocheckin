@@ -90,8 +90,8 @@ if __name__ == "__main__":
         cookie = i
         autherror = False
         signerror = False
-        sign_return = NULL
-        me = NULL
+        sign_return = None
+        me = None
         try:
             me = getme(current, cookie)
         except:
@@ -115,7 +115,7 @@ if __name__ == "__main__":
             msg.append(message)
             signerror = True
 
-        if sign.status_code == 200:
+        if sign_return.status_code == 200:
             message = '第{}个账号签到成功！'.format(cookies.index(i) + 1)
             success.append(cookie)
             msg.append(message)
