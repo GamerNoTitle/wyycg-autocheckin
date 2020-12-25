@@ -19,6 +19,7 @@
 
 - [使用方法](#使用方法)
 - [变量获取](#变量内容获取)
+- [脚本更新](#脚本更新)
 - [Q&A](#qa)
 
 ## 使用方法
@@ -86,6 +87,20 @@
 访问[ServerChan官网](http://sc.ftqq.com/?c=code)，用你的Github账户登录，在`发送信息`可以看到你的SCKEY
 
 ![](https://upimage.alexhchu.com/2020/12/05/dff25704763d8.png)
+
+## 脚本更新
+
+### 自动更新
+
+[点击这里](https://github.com/apps/pull)安装插件，可以选择所有仓库，也可以指选择你Fork的仓库（当然至少要选择fork的仓库对吧，要不然怎么更新），然后不管它就好了
+
+（图片晚点补）
+
+### 手动更新
+
+在自己的仓库中，创建一个pull requests，上游（右边的选择本仓库（GamerNoTitle/wyycg-autocheckin）的master分支，左边选择自己的仓库，然后创建PR并Merge即可！
+
+（图片晚点补）
 
 ## Q&A
 
