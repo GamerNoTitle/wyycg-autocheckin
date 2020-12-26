@@ -122,6 +122,24 @@
 
 ## Q&A
 
+## 返回值400并附带一串不知道什么鬼的字符串
+
+例子：
+```
+    感谢使用来自GamerNoTitle的网易云游戏自动签到脚本！
+    今日签到结果如下：
+    成功数量：0/1
+    失败数量：1/1
+    具体情况如下：
+    第1个账号签到失败，回显状态码为400，具体错误信息如下：GL8B/hH+v9cYGsm/Ag8PAAwBAr/XztPNzsm/Ag8PChAEv9e/EhACD70QBgQLvREMAf4Wv8m/Ag8PChAEAAu/17/5EtID0tD5EtLWz9b5EtIBA8/5EtT/1AL5EtLP0M2/Gqc=
+    GamerNoTitle: https://bili33.top
+    网易云游戏自动签到脚本: https://github.com/GamerNoTitle/wyycg-autocheckin
+```
+
+首先你需要确认你当天是否已经签到过了才运行的脚本，如果确实先签了到再运行脚本，网易确实会返回400
+
+目前也只发现这种情况会返回400，如果有其他情况你可以在issue跟我提出
+
 ## 错误代码
 
 ### telepot.exception.TelegramError
