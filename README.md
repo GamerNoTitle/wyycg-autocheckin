@@ -94,13 +94,25 @@
 
 [点击这里](https://github.com/apps/pull)安装插件，可以选择所有仓库，也可以指选择你Fork的仓库（当然至少要选择fork的仓库对吧，要不然怎么更新），然后不管它就好了
 
-（图片晚点补）
+详细步骤可以看下面的图片
+
+![](https://upimage.alexhchu.com/2020/12/26/4c0d02795a38c.png)
+
+![](https://upimage.alexhchu.com/2020/12/26/1800e5609a365.png)
+
+![](https://upimage.alexhchu.com/2020/12/26/29ffcfd4fd8b0.png)
+
+如果你完成了上面的步骤，就可以不管它了，自动更新会自己进行（除非有`Merge Conflict`）
 
 ### 手动更新
 
 在自己的仓库中，创建一个pull requests，上游（右边的选择本仓库（GamerNoTitle/wyycg-autocheckin）的master分支，左边选择自己的仓库，然后创建PR并Merge即可！
 
-（图片晚点补）
+具体可以看下面的图片
+
+![](https://upimage.alexhchu.com/2020/12/26/660bffa186f57.png)
+
+![](https://upimage.alexhchu.com/2020/12/26/b90770108e301.png)
 
 ## Q&A
 
