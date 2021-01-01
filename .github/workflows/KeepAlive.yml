@@ -21,7 +21,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git diff --quiet && git diff --staged --quiet || git commit -am 'avoid being suspended'
+          git diff --quiet && git diff --staged --quiet || git commit -am 'Keep Github Action Alive XD'
           echo ::set-output name=status::success
            
       - name: 'GitHub Push'
