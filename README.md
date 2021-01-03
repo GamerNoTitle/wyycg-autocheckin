@@ -73,6 +73,8 @@
 
 到这里勾选完以后点绿绿的Generate token就可以了
 
+**请注意：你无需在仓库的secrets内设置名为`GITHUB_TOKEN`的变量，该名称本身就是指定为自己账户下名为`GITHUB_TOKEN`的密钥，如果你在仓库的secrets内设置将会被Github提示无效**
+
 ## 变量内容获取
 
 ### cookie获取
