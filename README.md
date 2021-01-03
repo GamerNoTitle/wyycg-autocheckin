@@ -33,6 +33,8 @@
 
 2、进入设置，设置变量`cookie`和`teleid` `teletoken` `SCKEY`（这三个可选）
 
+**请注意：你无需在仓库的secrets内设置名为`GITHUB_TOKEN`的变量，该名称本身就是指定为自己账户下名为`GITHUB_TOKEN`的密钥，如果你在仓库的secrets内设置将会被Github提示无效**
+
 **如果使用多用户，多个cookie请使用`#`分隔**
 
 [如何获取变量内容？请点这里](#变量内容获取)
