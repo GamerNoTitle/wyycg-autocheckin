@@ -106,23 +106,23 @@ if __name__ == "__main__":
                 cookies.index(i) + 1)
             failure.append(cookie)
             msg.append(message)
+        elif me.status_code == 200:
+            try:
+                sign_return = signin(sign_url, cookie)
+            except:
+                message = '第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i) + 1, sign_return.status_code, sign_return.text)
+                failure.append(cookie)
+                msg.append(message)
+                signerror = True
 
-        try:
-            sign_return = signin(sign_url, cookie)
-        except:
-            message = '第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i) + 1, sign_return.status_code, sign_return.text)
-            failure.append(cookie)
-            msg.append(message)
-            signerror = True
-
-        if sign_return.status_code == 200:
-            message = '第{}个账号签到成功！'.format(cookies.index(i) + 1)
-            success.append(cookie)
-            msg.append(message)
-        elif not signerror:
-            message = '第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i) + 1, sign_return.status_code, sign_return.text)
-            failure.append(cookie)
-            msg.append(message)
+            if sign_return.status_code == 200:
+                message = '第{}个账号签到成功！'.format(cookies.index(i) + 1)
+                success.append(cookie)
+                msg.append(message)
+            elif not signerror:
+                message = '第{}个账号签到失败，回显状态码为{}，具体错误信息如下：{}'.format(cookies.index(i) + 1, sign_return.status_code, sign_return.text)
+                failure.append(cookie)
+                msg.append(message)
     outputmsg = str(msg).replace("[", '').replace(']', '').replace(',', '<br>').replace('\'', '')
     teleinfomsg = '''
     感谢使用来自GamerNoTitle的网易云游戏自动签到脚本！
