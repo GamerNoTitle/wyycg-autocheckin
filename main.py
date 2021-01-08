@@ -83,6 +83,7 @@ def scsend(SCKEY, message):
 
 
 if __name__ == "__main__":
+    print('检测到{}个账号，即将开始签到！'.format(len(cookies))
     success = []
     failure = []
     msg = []
