@@ -57,6 +57,10 @@
 
 ![](https://upimage.alexhchu.com/2020/11/22/457403bb7d3bb.png)
 
+除了点STAR进行启动以外，你也可以点击右边那个白白的按钮来启动
+
+![](https://upimage.alexhchu.com/2021/01/09/49ef24f93434e.png)
+
 **只要测试通过就是没问题，如果你配置了TELEGRAM还会收到你的BOT给你发送的消息**
 
 测试通过后，你还需要创建保活需要用到的Github Token，详情可以看[保活策略](#保活策略)这一节（其实就在下面撒）
