@@ -188,3 +188,9 @@
 `HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=30)`
 
 出现这个错误，那就是Telegram的问题，Github连接不上Telegram服务器（大半是TG服务器炸了）~~（复制粘贴大法）~~
+
+---
+
+## 历史STAR
+
+![](https://starchart.cc/GamerNoTitle/wyycg-autocheckin.svg)
