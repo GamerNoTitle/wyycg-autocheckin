@@ -11,25 +11,25 @@ current = 'https://n.cg.163.com/api/v2/client-settings/@current'
 
 
 cookies = sys.argv[1].split('#')
-switchpush = sys.argv[2]
-pushkey = sys.argv[3]
-teleid = sys.argv[3]
-teletoken = sys.argv[4]
+teleid = sys.argv[2]
+teletoken = sys.argv[3]
+sckey = sys.argv[4]
+qqkey = sys.argv[5]
 
 if cookies == "":
     print('[网易云游戏自动签到]未设置cookie，正在退出……')
     sys.exit()
-if switchpush == "1": #微信推送
-    sc_enable = True
-elif switchpush == "2": #qq推送
-    qq_enable = True
-elif switchpush == "3": #telegram推送
+if teleid != "" and teletoken != "":
     tele_enable = True
     bot = telepot.Bot(teletoken)
+if sckey != "":
+    sc_enable = True
+if qqkey != "":
+    qq_enable = True
     
 
-class Error(Exception):
-    pass
+class ScriptRunError(Exception):
+    print("[网易云游戏自动签到]脚本运行错误，具体请参见日志！")
 
 
 def signin(url, cookie):
@@ -157,15 +157,17 @@ if __name__ == "__main__":
     qqinfomsg = '''
     感谢使用来自bili33.top GamerNoTitle的网易云游戏自动签到脚本
     今日签到结果如下：
-    成功数量：{0}-{2}
-    失败数量：{1}-{2}
+    成功数量：{0}/{2}
+    失败数量：{1}/{2}
     具体情况如下：
     {3}
+    GamerNoTitle: https://bili33.top
+    网易云游戏自动签到脚本: https://github.com/GamerNoTitle/wyycg-autocheckin
     '''.format(len(success), len(failure), len(cookies), outputmsg)
 
     send(teleid, teleinfomsg)
-    scsend(pushkey, scinfomsg)
-    qqsend(pushkey, qqinfomsg)
+    scsend(sckey, scinfomsg)
+    qqsend(qqkey, qqinfomsg)
     print(teleinfomsg)
     if (len(failure) != 0):
-        raise Error
+        raise ScriptRunError
