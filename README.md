@@ -93,14 +93,6 @@
 
 ![](https://upimage.alexhchu.com/2020/11/22/bfb0e2dbd347a.png)
 
-### switchpush 选择推送方式
-
-> * 不推送    0
-> * 微信推送  1
-> * QQ推送    2
-> * Telegram  3
-
-
 ### teleid获取
 
 用你的Telegram找到@userinfobot，点个Start，会直接给你回复你的ID，复制下id后面的数字就是teleid了
@@ -113,16 +105,17 @@
 
 ![](https://upimage.alexhchu.com/2020/11/22/0428751a3925e.png)
 
-### pushkey获取
+#### SCKEY获取
 
-#### 填SCKEY或者QQKEY
-**SCKEY**
 访问[ServerChan官网](http://sc.ftqq.com/?c=code)，用你的Github账户登录，在`发送信息`可以看到你的SCKEY
 
 ![](https://upimage.alexhchu.com/2020/12/05/dff25704763d8.png)
 
-**[QQKEY](https://cp.xuthus.cc/)**
+#### QQKEY获取
 
+访问[CoolPush官网](https://cp.xuthus.cc/)，使用任一方式登录，在`调用代码Skey`可以看到你的KEY
+
+![](https://upimage.alexhchu.com/2021/01/25/dbfcd0cee03be.png)
 
 ## 脚本更新
 
@@ -207,3 +200,7 @@
 ## 历史STAR
 
 ![](https://starchart.cc/GamerNoTitle/wyycg-autocheckin.svg)
+
+## 免责声明
+
+使用本脚本造成的封号或任何违反相关法律法规造成的任何责任，由使用者自行承担，开发者不担负任何责任！
