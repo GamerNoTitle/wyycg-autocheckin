@@ -105,13 +105,13 @@
 
 ![](https://upimage.alexhchu.com/2020/11/22/0428751a3925e.png)
 
-#### SCKEY获取
+### SCKEY获取
 
 访问[ServerChan官网](http://sc.ftqq.com/?c=code)，用你的Github账户登录，在`发送信息`可以看到你的SCKEY
 
 ![](https://upimage.alexhchu.com/2020/12/05/dff25704763d8.png)
 
-#### QQKEY获取
+### QQKEY获取
 
 访问[CoolPush官网](https://cp.xuthus.cc/)，使用任一方式登录，在`调用代码Skey`可以看到你的KEY
 
