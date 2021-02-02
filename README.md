@@ -113,6 +113,8 @@
 
 ### QQKEY获取
 
+**不推荐使用此推送方式，因为其极不稳定！使用该推送方式无法收到QQ提醒的请不要开issue说这个问题，因为这是该服务的问题不是脚本问题**
+
 访问[CoolPush官网](https://cp.xuthus.cc/)，使用任一方式登录，在`调用代码Skey`可以看到你的KEY
 
 ![](https://upimage.alexhchu.com/2021/01/25/dbfcd0cee03be.png)
