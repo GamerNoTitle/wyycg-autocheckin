@@ -111,6 +111,12 @@
 
 ![](https://upimage.alexhchu.com/2020/12/05/dff25704763d8.png)
 
+### QQKEY获取
+
+访问[CoolPush官网](https://cp.xuthus.cc/)，使用任一方式登录，在`调用代码Skey`可以看到你的KEY
+
+![](https://upimage.alexhchu.com/2021/01/25/dbfcd0cee03be.png)
+
 ## 脚本更新
 
 ### 自动更新
@@ -194,3 +200,7 @@
 ## 历史STAR
 
 ![](https://starchart.cc/GamerNoTitle/wyycg-autocheckin.svg)
+
+## 免责声明
+
+使用本脚本造成的封号或任何违反相关法律法规造成的任何责任，由使用者自行承担，开发者不担负任何责任！

@@ -5,6 +5,7 @@ import telepot
 
 tele_enable = False
 sc_enable = False
+qq_enable = False
 sign_url = 'https://n.cg.163.com/api/v2/sign-today'
 current = 'https://n.cg.163.com/api/v2/client-settings/@current'
 
@@ -13,6 +14,7 @@ cookies = sys.argv[1].split('#')
 teleid = sys.argv[2]
 teletoken = sys.argv[3]
 sckey = sys.argv[4]
+qqkey = sys.argv[5]
 
 if cookies == "":
     print('[网易云游戏自动签到]未设置cookie，正在退出……')
@@ -22,10 +24,12 @@ if teleid != "" and teletoken != "":
     bot = telepot.Bot(teletoken)
 if sckey != "":
     sc_enable = True
+if qqkey != "":
+    qq_enable = True
+    
 
-
-class Error(Exception):
-    pass
+class ScriptRunError(Exception):
+    print("[网易云游戏自动签到]脚本运行错误，具体请参见日志！")
 
 
 def signin(url, cookie):
@@ -80,6 +84,11 @@ def scsend(SCKEY, message):
     sc_url = 'http://sc.ftqq.com/{}.send?text=网易云游戏自动签到脚本&desp={}'.format(SCKEY, message)
     if sc_enable:
         r.get(url=sc_url)
+        
+def qqsend(QQKEY, message):
+    qq_url = 'https://push.xuthus.cc/send/{}?c=网易云游戏自动签到脚本\n{}'.format(QQKEY, message)
+    if qq_enable:
+        r.get(url=qq_url)
 
 
 if __name__ == "__main__":
@@ -145,9 +154,20 @@ if __name__ == "__main__":
     GamerNoTitle: https://bili33.top
     网易云游戏自动签到脚本: https://github.com/GamerNoTitle/wyycg-autocheckin
     '''.format(len(success), len(failure), len(cookies), outputmsg)
+    qqinfomsg = '''
+    感谢使用来自bili33.top GamerNoTitle的网易云游戏自动签到脚本
+    今日签到结果如下：
+    成功数量：{0}/{2}
+    失败数量：{1}/{2}
+    具体情况如下：
+    {3}
+    GamerNoTitle: https://bili33.top
+    网易云游戏自动签到脚本: https://github.com/GamerNoTitle/wyycg-autocheckin
+    '''.format(len(success), len(failure), len(cookies), outputmsg)
 
-    scsend(sckey, scinfomsg)
     send(teleid, teleinfomsg)
+    scsend(sckey, scinfomsg)
+    qqsend(qqkey, qqinfomsg)
     print(teleinfomsg)
     if (len(failure) != 0):
-        raise Error
+        raise ScriptRunError

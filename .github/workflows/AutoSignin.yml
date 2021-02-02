@@ -10,7 +10,7 @@ on:
   #  branches: 
   #    - master
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 0 * * *"
   watch:
     types: [started]
    
@@ -30,4 +30,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run script
       run: |
-        python3 main.py "${{ secrets.cookie }}" "${{ secrets.teleid }}" "${{ secrets.teletoken }}" "${{ secrets.SCKEY }}"
+        python3 main.py "${{ secrets.cookie }}" "${{ secrets.teleid }}" "${{ secrets.teletoken }}" "${{ secrets.SCKEY }}" "${{ secrets.QQKEY }}"
