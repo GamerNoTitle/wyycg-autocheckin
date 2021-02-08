@@ -94,7 +94,7 @@ def qqsend(QQKEY, message):
         r.get(url=qq_url)
 
 def ppsend(PPKEY, message):
-    pp_url = 'http://pushplus.hxtrip.com/send?token={}&title=XXX&content={}&template=html'.format(PPKEY, message)
+    pp_url = 'http://pushplus.hxtrip.com/send?token={}&title=网易云游戏自动签到脚本&content={}&template=html'.format(PPKEY, message)
     if pp_enable:
         r.get(url=pp_url)
 
