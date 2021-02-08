@@ -1,4 +1,4 @@
-name: AutoSignin
+name: AutoCheckin
 
 on: 
   workflow_dispatch:
@@ -30,4 +30,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run script
       run: |
-        python3 main.py "${{ secrets.cookie }}" "${{ secrets.teleid }}" "${{ secrets.teletoken }}" "${{ secrets.SCKEY }}" "${{ secrets.QQKEY }}"
+        python3 main.py "${{ secrets.cookie }}" "${{ secrets.teleid }}" "${{ secrets.teletoken }}" "${{ secrets.SCKEY }}" "${{ secrets.QQKEY }}" "${{ secrets.PPKEY }}"
