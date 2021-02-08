@@ -31,7 +31,7 @@
 
 ![](https://upimage.alexhchu.com/2020/11/22/e9b4bcf8e6a1d.png)
 
-2、进入设置，设置变量`cookie`和`teleid` `teletoken` `SCKEY` `QQKEY` `PUSHPLUSKEY`（这五个可选，但是`teleid`和`teletoken`要用的话就得两个都要配置！）
+2、进入设置，设置变量`cookie`和`teleid` `teletoken` `SCKEY` `QQKEY` `PPKEY`（这五个可选，但是`teleid`和`teletoken`要用的话就得两个都要配置！）
 
 **请注意：你无需在仓库的secrets内设置名为`GITHUB_TOKEN`的变量，该名称本身就是指定为自己账户下名为`GITHUB_TOKEN`的密钥，如果你在仓库的secrets内设置将会被Github提示无效**
 
@@ -119,11 +119,13 @@
 
 ![](https://upimage.alexhchu.com/2021/01/25/dbfcd0cee03be.png)
 
-### PUSHPLUSKEY获取
+### PPKEY获取
 
 **此平台是ServerChan的替代平台，因为ServerChan发了个[通知](https://mp.weixin.qq.com/s/L4rONhZN2OCQ80cHxPAY0Q)，所以我就先把这个给更了
 
 访问[PushPlus官网](http://pushplus.hxtrip.com/)，使用微信登录，直接在[一对一推送](http://pushplus.hxtrip.com/message)复制自己的Token填入变量即可！
+
+![](https://upimage.alexhchu.com/2021/02/08/c8d1898ca8de5.png)
 
 ## 脚本更新
 
