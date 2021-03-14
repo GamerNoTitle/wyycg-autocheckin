@@ -18,7 +18,7 @@ sckey = sys.argv[4]
 qqkey = sys.argv[5]
 ppkey = sys.argv[6]
 
-if cookies == "":
+if cookies == "" or cookies == []:
     print('[网易云游戏自动签到]未设置cookie，正在退出……')
     sys.exit()
 if teleid != "" and teletoken != "":
