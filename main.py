@@ -84,7 +84,7 @@ def send(id, message):
 
 
 def scsend(SCKEY, message):
-    sc_url = 'http://sc.ftqq.com/{}.send?text=网易云游戏自动签到脚本&desp={}'.format(SCKEY, message)
+    sc_url = 'http://sctapi.ftqq.com/{}.send?title=网易云游戏自动签到脚本&desp={}'.format(SCKEY, message)
     if sc_enable:
         r.get(url=sc_url)
         
