@@ -107,9 +107,9 @@
 
 ### SCKEY获取
 
-访问[ServerChan官网](http://sc.ftqq.com/?c=code)，用你的Github账户登录，在`发送信息`可以看到你的SCKEY
+访问[ServerChanTurbo官网](https://sct.ftqq.com/)，并用你的微信扫码登陆，获取推送用的KEY即可（因为我没有使用这个推送方法所以没有图）
 
-![](https://upimage.alexhchu.com/2020/12/05/dff25704763d8.png)
+**请各位使用了SC推送服务的小伙伴尽快迁移到SCT，原服务将会在四月底下线**
 
 ### QQKEY获取
 
