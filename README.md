@@ -193,6 +193,29 @@
 
 请检查自己的Telebot Token是否正确！
 
+### telepot.exception.UnauthorizedError
+
+该错误显示如下：
+
+```
+Traceback (most recent call last):
+File "main.py", line 185, in
+send(teleid, teleinfomsg)
+File "main.py", line 82, in send
+bot.sendMessage(id, message, parse_mode=None, disable_web_page_preview=None, disable_notification=None,
+File "/opt/hostedtoolcache/Python/3.8.9/x64/lib/python3.8/site-packages/telepot/init.py", line 513, in sendMessage
+return self._api_request('sendMessage', _rectify(p))
+File "/opt/hostedtoolcache/Python/3.8.9/x64/lib/python3.8/site-packages/telepot/init.py", line 491, in _api_request
+return api.request((self._token, method, params, files), **kwargs)
+File "/opt/hostedtoolcache/Python/3.8.9/x64/lib/python3.8/site-packages/telepot/api.py", line 155, in request
+return _parse(r)
+File "/opt/hostedtoolcache/Python/3.8.9/x64/lib/python3.8/site-packages/telepot/api.py", line 147, in _parse
+raise e(description, error_code, data)
+telepot.exception.UnauthorizedError: ('Unauthorized', 401, {'ok': False, 'error_code': 401, 'description': 'Unauthorized'})
+```
+
+解决方法：检查自己的Bot的Token是不是正确的！
+
 ### urllib3.exceptions
 
 #### MaxRetryError
