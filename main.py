@@ -23,13 +23,25 @@ if cookies == "" or cookies == []:
     sys.exit()
 if teleid != "" and teletoken != "":
     tele_enable = True
+    print('Telegram推送已配置！')
     bot = telepot.Bot(teletoken)
+else:
+    print('未配置Telegram推送！')
 if sckey != "":
     sc_enable = True
+    print('ServerChan推送已配置！')
+else:
+    print('未配置ServerChan推送！')
 if qqkey != "":
     qq_enable = True
+    print('QQ推送已配置！')
+else:
+    print('未配置QQ推送！')
 if ppkey != '':
     pp_enable = True
+    print('PushPlus推送已配置！')
+else:
+    print('未配置PushPlus推送！')
 
 class ScriptRunError(Exception):
     print("[网易云游戏自动签到]脚本运行错误，具体请参见日志！")
@@ -79,24 +91,32 @@ def getme(url, cookie):
 
 def send(id, message):
     if tele_enable:
+        print('正在使用Telebot进行消息推送……')
         bot.sendMessage(id, message, parse_mode=None, disable_web_page_preview=None, disable_notification=None,
                         reply_to_message_id=None, reply_markup=None)
+        print('Telebot消息推送完成！')
 
 
 def scsend(SCKEY, message):
     sc_url = 'http://sctapi.ftqq.com/{}.send?title=网易云游戏自动签到脚本&desp={}'.format(SCKEY, message)
     if sc_enable:
+        print('正在使用ServerChan进行消息推送……')
         r.get(url=sc_url)
+        print('ServerChan消息推送完成！')
         
 def qqsend(QQKEY, message):
     qq_url = 'https://push.xuthus.cc/send/{}?c=网易云游戏自动签到脚本\n{}'.format(QQKEY, message)
     if qq_enable:
+        print('正在进行QQ消息推送……')
         r.get(url=qq_url)
+        print('QQ消息推送完成！')
 
 def ppsend(PPKEY, message):
     pp_url = 'http://pushplus.hxtrip.com/send?token={}&title=网易云游戏自动签到脚本&content={}&template=html'.format(PPKEY, message)
     if pp_enable:
+        print('正在使用PushPlus进行消息推送……')
         r.get(url=pp_url)
+        print('PushPlus消息推送完成')
 
 if __name__ == "__main__":
     print('检测到{}个账号，即将开始签到！'.format(len(cookies)))
