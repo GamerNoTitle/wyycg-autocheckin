@@ -2,6 +2,8 @@
 
 请注意：关于LICENSE，在Apache-2.0的基础上增加一条：**禁止上传到CSDN等网站盈利，禁止放在某宝某鱼等平台贩卖**，否则官方找上门就**删库跑路**！
 
+**本脚本从[@GamerNoTitle](https://github.com/GamerNoTitle)出Fork而来，源仓库已于2020.5.19删除（我也不知道为什么本仓库会成为源仓库，理论上应该所有人都是源仓库才对），具体请参照[关于得知Github查封Action仓库的信息后我自行删除脚本的这档事 #2](https://github.com/GamerNoTitle/GamerNoTitle/discussions/2)**
+
 本脚本通过使用Github Action来进行[网易云游戏](https://cloudgame.webapp.163.com/newer.html?invite_code=2ZLPWY)签到操作，让你能够天天白嫖网易云游戏时长和云电脑！
 
 喜欢就给我点个STAR吧！
