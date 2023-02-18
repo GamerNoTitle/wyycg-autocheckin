@@ -22,9 +22,9 @@
 ## 目录
 
 - [使用方法](#使用方法)
-- [保活策略](#保活策略)
+- ~~[保活策略](#保活策略)~~
 - [变量获取](#变量内容获取)
-- [脚本更新](#脚本更新)
+- ~~[脚本更新](#脚本更新)~~
 - [Q&A](#qa)
 
 ## 使用方法
@@ -33,7 +33,7 @@
 
 1、Fork本仓库，按右上角的分支按钮（如图）
 
-![](https://upimage.alexhchu.com/2020/11/22/e9b4bcf8e6a1d.png)
+![](https://img-blog.csdnimg.cn/img_convert/66fab88923e92003e3afa44206b4bd24.png)
 
 2、进入设置，设置变量`cookie`和`teleid` `teletoken` `SCKEY` `QQKEY` `PPKEY`（这五个可选，但是`teleid`和`teletoken`要用的话就得两个都要配置！）
 
@@ -43,11 +43,11 @@
 
 [如何获取变量内容？请点这里](#变量内容获取)
 
-![](https://upimage.alexhchu.com/2020/11/22/988724b77ca62.png)
+![](https://img-blog.csdnimg.cn/img_convert/6f1fe236f0738619a72c51f66602c200.png)
 
-![](https://upimage.alexhchu.com/2020/11/22/a7958e9f5582f.png)
+![](https://img-blog.csdnimg.cn/img_convert/a061b20e2e7ba6469815da4bdc1ead4d.png)
 
-![](https://upimage.alexhchu.com/2020/11/22/7213627d41fc1.png)
+![](https://img-blog.csdnimg.cn/img_convert/fced676544526af044e9ad985b77b8ca.png)
 
 ### 测试脚本
 
@@ -55,35 +55,23 @@
 
 我们先进入Action界面，启用Action
 
-![](https://upimage.alexhchu.com/2020/11/22/70dd262ae54f0.png)
+![](https://img-blog.csdnimg.cn/img_convert/ca2490f2f7ccd525598e75fe9c2d79a8.png)
 
 然后我们进入对应的脚本，启用脚本，并进行测试
 
-![](https://upimage.alexhchu.com/2020/11/22/457403bb7d3bb.png)
+![](https://img-blog.csdnimg.cn/img_convert/2451e76e03508ce7c852b3a226d8d599.png)
 
-除了点STAR进行启动以外，你也可以点击右边那个白白的按钮来启动
-
-![](https://upimage.alexhchu.com/2021/01/09/49ef24f93434e.png)
+~~除了点STAR进行启动以外~~（现在STAR启动不了了），你也可以点击右边那个白白的按钮来启动
 
 **只要测试通过就是没问题，如果你配置了TELEGRAM还会收到你的BOT给你发送的消息**
 
 测试通过后，你还需要创建保活需要用到的Github Token，详情可以看[保活策略](#保活策略)这一节（其实就在下面撒）
 
-## 保活策略
+## ~~保活策略~~ （新版Action可跳过，但是在设置里面的Action权限要放行写入权限！）
 
 因为Github Action在仓库60天内没有任何Push的时候会禁用你的Action，这时候我们就要进行保活
 
-保活Action已经写好了，但是这里有一些步骤是需要你进行的，请看下面的图片生成GITHUB_TOKEN以便让脚本造成的更改能够正常推送入你的仓库
-
-![](https://upimage.alexhchu.com/2020/12/27/dce7070ae625c.png)
-
-![](https://upimage.alexhchu.com/2020/12/27/f82f6505503ed.png)
-
-![](https://upimage.alexhchu.com/2020/12/27/9cff0436399b7.png)
-
-到这里勾选完以后点绿绿的Generate token就可以了
-
-**请注意：你无需在仓库的secrets内设置名为`GITHUB_TOKEN`的变量，该名称本身就是指定为自己账户下名为`GITHUB_TOKEN`的密钥，如果你在仓库的secrets内设置将会被Github提示无效**
+保活Action已经写好了~~，但是这里有一些步骤是需要你进行的，请看下面的图片生成GITHUB_TOKEN以便让脚本造成的更改能够正常推送入你的仓库~~
 
 ## 变量内容获取
 
@@ -95,19 +83,15 @@
 
 **如果使用多用户，多个cookie请使用`#`分隔**
 
-![](https://upimage.alexhchu.com/2020/11/22/bfb0e2dbd347a.png)
+![](https://img-blog.csdnimg.cn/img_convert/8916bfbda33b93061206f2571665987d.png)
 
 ### teleid获取
 
 用你的Telegram找到@userinfobot，点个Start，会直接给你回复你的ID，复制下id后面的数字就是teleid了
 
-![](https://upimage.alexhchu.com/2020/11/22/e4c50250626a6.png)
-
 ### teletoken获取
 
 找@BotFather进行机器人的创建，按照提示创建即可，会给你一个API TOKEN，如果一不小心点过去了可以用命令`/mybots`管理自己的bot，找到自己想要使用的bot并获取API就可以了
-
-![](https://upimage.alexhchu.com/2020/11/22/0428751a3925e.png)
 
 ### SCKEY获取
 
@@ -128,40 +112,6 @@
 **此平台是ServerChan的替代平台，因为ServerChan发了个[通知](https://mp.weixin.qq.com/s/L4rONhZN2OCQ80cHxPAY0Q)，所以我就先把这个给更了
 
 访问[PushPlus官网](http://pushplus.hxtrip.com/)，使用微信登录，直接在[一对一推送](http://pushplus.hxtrip.com/message)复制自己的Token填入变量即可！
-
-![](https://upimage.alexhchu.com/2021/02/08/c8d1898ca8de5.png)
-
-## 脚本更新
-
-### 自动更新
-
-[点击这里](https://github.com/apps/pull)安装插件，可以选择所有仓库，也可以指选择你Fork的仓库（当然至少要选择fork的仓库对吧，要不然怎么更新），然后不管它就好了
-
-详细步骤可以看下面的图片
-
-![](https://upimage.alexhchu.com/2020/12/26/4c0d02795a38c.png)
-
-![](https://upimage.alexhchu.com/2020/12/26/1800e5609a365.png)
-
-![](https://upimage.alexhchu.com/2020/12/26/29ffcfd4fd8b0.png)
-
-如果你完成了上面的步骤，就可以不管它了，自动更新会自己进行（除非有`Merge Conflict`）
-
-### 手动更新
-
-在自己的仓库中，创建一个pull requests，上游（右边的选择本仓库（GamerNoTitle/wyycg-autocheckin）的master分支，左边选择自己的仓库，然后创建PR并Merge即可！
-
-具体可以看下面的图片
-
-![](https://upimage.alexhchu.com/2020/12/26/660bffa186f57.png)
-
-![](https://upimage.alexhchu.com/2020/12/26/b90770108e301.png)
-
-![](https://upimage.alexhchu.com/2020/12/26/da988092d8556.png)
-
-![](https://upimage.alexhchu.com/2020/12/26/444ca5bc88093.png)
-
-![](https://upimage.alexhchu.com/2020/12/26/db022886a1c5f.png)
 
 ## Q&A
 
