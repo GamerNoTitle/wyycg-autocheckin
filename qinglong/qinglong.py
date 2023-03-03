@@ -1,7 +1,7 @@
 import sys
 import requests as r
 import json
-import telepot
+import os
 
 tele_enable = False
 sc_enable = False
@@ -11,7 +11,7 @@ sign_url = 'https://n.cg.163.com/api/v2/sign-today'
 current = 'https://n.cg.163.com/api/v2/client-settings/@current'
 
 
-cookies = sys.argv[1].split('#')
+cookies = os.environ.get('wyycg_cookies').split('#')
 
 if cookies == "" or cookies == []:
     print('[网易云游戏自动签到]未设置cookie，正在退出……')
