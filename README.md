@@ -2,7 +2,7 @@
 
 请注意：关于LICENSE，在Apache-2.0的基础上增加一条：**禁止上传到CSDN等网站盈利，禁止放在某宝某鱼等平台贩卖**，否则官方找上门就**删库跑路**！
 
-仓库被封了就来这里找https://gogs.console.bili33.top/explore/repos
+仓库被封了就来这里找https://git.bili33.top/GamerNoTitle/wyycg-AutoCheckin
 
 本脚本通过使用Github Action来进行[网易云游戏](https://cloudgame.webapp.163.com/newer.html?invite_code=2ZLPWY)签到操作，让你能够天天白嫖网易云游戏时长和云电脑！
 
