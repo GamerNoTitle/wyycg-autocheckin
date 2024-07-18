@@ -95,7 +95,7 @@
 
 ### SCKEY获取
 
-访问[ServerChanTurbo官网](https://sct.ftqq.com/)，并用你的微信扫码登陆，获取推送用的KEY即可（因为我没有使用这个推送方法所以没有图）
+访问[ServerChanTurbo官网](https://sct.ftqq.com/r/3350)，并用你的微信扫码登陆，获取推送用的KEY即可（因为我没有使用这个推送方法所以没有图）
 
 **请各位使用了SC推送服务的小伙伴尽快迁移到SCT，原服务将会在四月底下线**
 
